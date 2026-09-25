@@ -1,0 +1,112 @@
+body{
+  font-family: "Maiden Orange";
+  background-color: #171717;
+  font-weight: bold;
+  
+}
+.app{
+    display: flex;
+    height: 100vh;
+    border: 2px solid ;
+    border-radius: 4px;
+    background-color: #171717;
+  }
+.page-title{
+  color: whitesmoke;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}  
+.sidebar div{
+  background-color:#212020;
+  size: 40px;
+  grid-template-columns: 40px;
+  height: 800px;
+  border-radius: 20px;
+}
+.logo {
+  color: beige;
+}
+.sidebar-nav{
+  display :flex;
+  flex: row;
+}
+.genre-music {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 263px);
+  position: relative;
+  
+}
+.genre-music div {
+  font-size: 64px;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 10px;
+  
+}
+.pop{
+  height: 263px ;
+  width: 263px;
+  color: #ffff;
+  background: #FFF200;
+
+  }
+.rock{
+  color: #ffff;
+  height: 263px ;
+  width: 263px;
+  background-color: #50DA60;
+}  
+.jazz{
+  color: #ffff;
+   height: 263px ;
+   width: 263px;
+   background-color: #FF0000;
+}
+.retro{
+  color: #ffff;
+  height: 263px ;
+   width: 263px;
+   background-color: #083130;
+}
+.slow{
+  background-color: #BFFF66;
+  height: 263px ;
+   width: 263px;
+   color: #ffff;
+   border-radius: 40px;
+}
+.alter-rock{
+  background-color: #FF8000;
+  height: 263px ;
+   width: 263px;
+   color: #ffff;
+}
+.raindy{
+  background-color: #0073FF;
+  height: 263px ;
+   width: 263px;
+   color: #ffff;
+}
+.summer{
+  background-color: #A88900;
+  height: 263px ;
+   width: 263px;
+  color: #ffff; 
+}
+.campursari{
+  background-color: #FF0000;
+  height: 263px ;
+   width: 263px;
+   color: #ffff;
+   
+}
+.bhapp{
+  background-color: #9023C2 ;
+  height: 263px ;
+   width: 263px;
+   color: #ffff;
+}

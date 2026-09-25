@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Holic</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="logo">HM</div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-icon activ" data-page="home" title="Home"><img src="/assets/home.png" alt=""></a>
+        <a href="#" class="nav-icon" data-page="foryou" title="Search / For You"><img src="/assets/cari.png" alt=""></a>
+        <a href="#" class="nav-icon" data-page="favorites" title="Favorites"><img src="/assets/love.png" alt=""></a>
+      </nav>
+
+      <a href="#" class="sidebar-avatar" data-page="profile" title="Profile">
+        <img src="/assets/bhapp.png" alt="profile">
+      </a>
+    </aside>
+    <main class="content">
+
+      <header class="topbar">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search">
+        <h1 class="page-title" id="pageTitle">summer routine playlist</h1>
+        
+      </header>
+      <div class="genre-music">
+        <div class="pop"><img src="./assets/pop.png" alt="">pop</div>
+        <div class=" rock"><img src="./assets/rock.png" alt="">rock</div>
+        <div class="jazz"><img src="./assets/jazz.png" alt="">jazz</div>
+        <div class="retro"><img src="./assets/retro.png" alt="">retro</div>
+        <div class="slow"><img src="./assets/slow.png" alt="">slow</div>
+        <div class="alter-rock"><img src="./assets/alter-rock.png" alt="">alter rock</div>
+        <div class="raindy"><img src="./assets/raindy.png" alt="">raindy</div>
+        <div class="summer"><img src="./assets/summer.png" alt="">summer</div>
+        <div class="campursari"><img src="./assets/campursari.png" alt="">campursari</div>
+        <div class="bhapp"><img src="./assets/bhapp.png" alt="">bhapp</div>
+      </div>
+
+    
+      <section class="page" id="page-profile">
+        <div class="profile-header">
+          <img src="" class="profile-avatar" alt="avatar">
+          <div>
+            <h2 id="profileName">fish don't cry</h2>
+            <p id="profileEmail" class="text-muted">fishtillidie@gmail.com</p>
+          </div>
+        </div>
+        <hr class="divider">
+        <h3 class="section-label">recomendation song</h3>
+        <div class="song-list" id="profileSongs"></div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer class="player-bar">
+    <div class="now-playing">
+      <img src="assets/images/thunder.png" alt="cover" class="cover-mini" id="nowPlayingCover">
+      <div class="song-info">
+        <span class="song-title" id="nowPlayingTitle">thunder song</span>
+        <span class="song-artist" id="nowPlayingArtist">thunder 1975</span>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <div class="control-buttons">
+        <button class="ctrl-btn" id="btnMute">🔇</button>
+        <button class="ctrl-btn" id="btnPrev">⏮</button>
+        <button class="ctrl-btn play" id="btnPlay">▶</button>
+        <button class="ctrl-btn" id="btnNext">⏭</button>
+        <button class="ctrl-btn" id="btnVolume">🔊</button>
+      </div>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="player-extra">
+      <button class="ctrl-btn" id="btnLoveNow">♡</button>
+      <button class="ctrl-btn" id="btnRepeat">🔁</button>
+      <button class="ctrl-btn" id="btnShuffle">🔀</button>
+    </div>
+  </footer>
+</body>
+</html>
