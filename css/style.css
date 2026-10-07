@@ -1,0 +1,467 @@
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Maiden Orange", system-ui, sans-serif;
+  background-color: #171717;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Layout utama ===== */
+.app {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 12px;
+  gap: 16px;
+  background-color: #171717;
+  /* ruang untuk player bar di bawah */
+  padding-bottom: 96px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0; /* supaya grid tidak meluber */
+  position: relative;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 72px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  background-color: #212020;
+  border-radius: 20px;
+  position: sticky;
+  top: 12px;
+  height: calc(100vh - 24px);
+  height: calc(100dvh - 24px);
+}
+
+.logo {
+  color: beige;
+  font-size: 20px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nav-icon img,
+.sidebar-avatar img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.sidebar-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 420px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #2a2a2a;
+  color: whitesmoke;
+  font: inherit;
+}
+
+.page-title {
+  color: whitesmoke;
+  margin: 0;
+  font-size: clamp(16px, 2.2vw, 24px);
+  text-align: right;
+}
+
+/* ===== Grid genre ===== */
+.genre-music {
+  display: grid;
+  gap: 24px;
+  margin-top: 36px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.genre-music > div {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(20px, 3.4vw, 64px);
+  line-height: 1.05;
+  cursor: pointer;
+}
+
+.genre-music > div img {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 38%;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.pop        { background: #FFF200; }
+.rock       { background-color: #50DA60; }
+.jazz       { background-color: #FF0000; }
+.retro      { background-color: #083130; }
+.slow       { background-color: #BFFF66; }
+.alter-rock { background-color: #FF8000; }
+.raindy     { background-color: #0073FF; }
+.summer     { background-color: #A88900; }
+.campursari { background-color: #FF0000; }
+.bhapp      { background-color: #9023C2; }
+
+/* ===== Profil ===== */
+.page {
+  color: whitesmoke;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2a2a;
+}
+
+.text-muted {
+  color: #9a9a9a;
+  margin: 4px 0 0;
+  word-break: break-word;
+}
+
+/* ===== Player bar ===== */
+.player-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: #212020;
+  color: whitesmoke;
+}
+
+.now-playing {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cover-mini {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.song-title,
+.song-artist {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-buttons,
+.player-extra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.player-extra {
+  justify-content: flex-end;
+}
+
+.ctrl-btn {
+  min-width: 40px;
+  min-height: 40px; /* target sentuh nyaman */
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ctrl-btn.play {
+  background: whitesmoke;
+  color: #171717;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #3a3a3a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: #50DA60;
+}
+
+/* ===================================================
+  TABLET (<= 1280px)
+   =================================================== */
+@media (max-width: 1280px) {
+  .app {
+    flex-direction: column;
+    padding: 82px 10px 10px;
+    gap: 12px;
+    padding-bottom: 110px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  .logo,
+  .sidebar-avatar {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 31;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    top: calc(100% + 8px);
+    right: 10px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #212020;
+  }
+
+  .sidebar.is-open .sidebar-nav {
+    display: flex;
+  }
+
+  .genre-music {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .genre-music > div {
+    border-radius: 32px;
+    padding: 16px;
+    font-size: clamp(22px, 5vw, 44px);
+  }
+
+  .player-bar {
+    grid-template-columns: 1.2fr 2fr auto;
+    padding: 10px 14px;
+  }
+}
+
+/* ===================================================
+   HP (<= 640px)
+   Sidebar jadi bottom nav, player bar naik di atasnya
+   =================================================== */
+@media (max-width: 640px) {
+  .app {
+    padding: 78px 12px 0;
+    padding-bottom: 130px;
+  }
+
+  .sidebar {
+    top: 10px;
+    right: 10px;
+  }
+
+  .nav-toggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Topbar: judul di atas, search di bawah */
+  .topbar {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-input {
+    max-width: none;
+    width: 100%;
+  }
+
+  .page-title {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  /* Grid genre 2 kolom */
+  .genre-music {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .genre-music > div {
+    border-radius: 24px;
+    padding: 14px;
+    font-size: clamp(18px, 6.5vw, 30px);
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  /* Player bar ringkas di bagian bawah layar */
+  .player-bar {
+    bottom: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info extra"
+      "ctrl ctrl";
+    gap: 6px 10px;
+    padding: 8px 12px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .now-playing     { grid-area: info; }
+  .player-extra    { grid-area: extra; }
+  .player-controls { grid-area: ctrl; }
+
+  .cover-mini {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ctrl-btn {
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 16px;
+  }
+
+  /* tombol mute/volume disembunyikan di HP (pakai tombol fisik) */
+  #btnMute,
+  #btnVolume {
+    display: none;
+  }
+}
+
+/* HP kecil (<= 360px) */
+@media (max-width: 360px) {
+  .genre-music > div {
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .player-extra #btnShuffle {
+    display: none;
+  }
+}

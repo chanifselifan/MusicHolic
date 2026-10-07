@@ -11,7 +11,7 @@
       <aside class="sidebar">
         <div class="logo">HM</div>
 
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" id="sidebarNav" aria-label="Navigasi utama">
           <a href="#" class="nav-icon activ" data-page="home" title="Home"
             ><img src="/assets/home.png" alt=""
           /></a>
@@ -30,6 +30,16 @@
         <a href="#" class="sidebar-avatar" data-page="profile" title="Profile">
           <img src="/assets/bhapp.png" alt="profile" />
         </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+          aria-controls="sidebarNav"
+        >
+          <img src="/assets/bhapp.png" alt="" />
+        </button>
       </aside>
       <main class="content">
         <header class="topbar">
@@ -125,5 +135,25 @@
         </button>
       </div>
     </footer>
+    <script>
+      const sidebar = document.querySelector(".sidebar");
+      const navToggle = document.getElementById("navToggle");
+      const sidebarNav = document.getElementById("sidebarNav");
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        navToggle.setAttribute("aria-label", isOpen ? "Buka navigasi" : "Tutup navigasi");
+        sidebar.classList.toggle("is-open", !isOpen);
+      });
+
+      sidebarNav.addEventListener("click", (event) => {
+        if (event.target.closest(".nav-icon")) {
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Buka navigasi");
+          sidebar.classList.remove("is-open");
+        }
+      });
+    </script>
   </body>
 </html>
